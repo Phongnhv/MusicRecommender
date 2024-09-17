@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-radius: 25;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mrs.HelloController">
+   <children>
+      <AnchorPane fx:id="main_form1" prefHeight="457.0" prefWidth="656.0" style="-fx-background-color: #f1f5fa;">
+         <children>
+            <AnchorPane layoutY="-1.0" prefHeight="505.0" prefWidth="319.0" styleClass="left-form" stylesheets="@loginDes.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="92.0" layoutY="286.0" prefHeight="58.0" prefWidth="174.0" text="Music Recommender" textFill="WHITE" AnchorPane.bottomAnchor="163.60000000000002" AnchorPane.topAnchor="286.0">
+                     <font>
+                        <Font name="Tahoma" size="18.0" />
+                     </font>
+                  </Label>
+                  <FontAwesomeIcon caretBias="false" fill="#f5f5f5" glyphName="MUSIC" layoutX="128.0" layoutY="260.0" size="10em" AnchorPane.bottomAnchor="226.05713958740233" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="127.54286041259763" AnchorPane.topAnchor="157.14286041259766" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="right_form2" layoutX="350.0" prefHeight="502.0" prefWidth="358.0" style="-fx-background-color: #f1f5fa;" styleClass="right-form" stylesheets="@loginDes.css" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label layoutX="142.0" layoutY="132.0" text="User Sign Up">
+                     <font>
+                        <Font name="Tahoma" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="Signup_username" layoutX="94.0" layoutY="178.0" prefHeight="30.0" prefWidth="200.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(to bottom right, #2d658c, #2ca772); -fx-border-width: 0px 0px 2px 0px;" styleClass="sign-up">
+                     <stylesheets>
+                        <URL value="@loginDes.css" />
+                        <URL value="@loginDes.css" />
+                     </stylesheets></TextField>
+                  <PasswordField fx:id="Signup_password" layoutX="94.0" layoutY="223.0" prefHeight="30.0" prefWidth="200.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(to bottom right, #2d658c, #2ca772); -fx-border-width: 0px 0px 2px 0px;" styleClass="textfield" stylesheets="@loginDes.css" />
+                  <Button fx:id="SignupBtn" layoutX="94.0" layoutY="325.0" mnemonicParsing="false" onAction="#SignUpUser" prefHeight="40.0" prefWidth="200.0" styleClass="login" stylesheets="@loginDes.css" text="Sign Up" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <PasswordField fx:id="Signup_reenter" layoutX="94.0" layoutY="269.0" prefHeight="30.0" prefWidth="200.0" promptText="Re-enter Password" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(to bottom right, #2d658c, #2ca772); -fx-border-width: 0px 0px 2px 0px;" styleClass="textfield" stylesheets="@loginDes.css" />
+                  <Button fx:id="Login_returnBtn" layoutX="129.0" layoutY="424.0" mnemonicParsing="false" onAction="#MoveToLogin" styleClass="return" stylesheets="@loginDes.css" text="Return to Login page" />
+                  <FontAwesomeIcon glyphName="USER" layoutX="170.0" layoutY="105.0" size="5em">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1725490242242813" green="0.6549019813537598" blue="0.4470588266849518" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.6065620588911138">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5490196347236633" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon glyphName="USER" layoutX="65.0" layoutY="201.0" size="20">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1725490242242813" green="0.6549019813537598" blue="0.4470588266849518" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.6065620588911138">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5490196347236633" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon glyphName="KEY" layoutX="65.0" layoutY="247.0" size="20" styleClass="left-form">
+                     <selectionFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </selectionFill>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1725490242242813" green="0.6549019813537598" blue="0.4470588266849518" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.612536519712438">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5490196347236633" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon glyphName="KEY" layoutX="66.0" layoutY="294.0" size="20" styleClass="left-form">
+                     <selectionFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </selectionFill>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1725490242242813" green="0.6549019813537598" blue="0.4470588266849518" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.612536519712438">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5490196347236633" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </FontAwesomeIcon>
+                  <Button fx:id="SignupBtn2" layoutX="93.0" layoutY="373.0" mnemonicParsing="false" onAction="#SignUpWithSpotify" prefHeight="40.0" prefWidth="200.0" styleClass="login" stylesheets="@loginDes.css" text="Sign Up With Spotify" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@spotify-playlist.jpeg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="right_form1" layoutX="344.0" layoutY="1.0" prefHeight="502.0" prefWidth="358.0" style="-fx-background-color: #f1f5fa;" styleClass="right-form" stylesheets="@loginDes.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <FontAwesomeIcon glyphName="USER" layoutX="169.0" layoutY="132.0" size="5em">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1725490242242813" green="0.6549019813537598" blue="0.4470588266849518" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.6065620588911138">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5490196347236633" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </FontAwesomeIcon>
+                  <Label layoutX="151.0" layoutY="154.0" text="User Login">
+                     <font>
+                        <Font name="Tahoma" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="username" layoutX="93.0" layoutY="199.0" prefHeight="30.0" prefWidth="200.0" promptText="Username" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(to bottom right, #2d658c, #2ca772); -fx-border-width: 0px 0px 2px 0px;" styleClass="input-field" stylesheets="@loginDes.css" />
+                  <PasswordField fx:id="password" layoutX="94.0" layoutY="245.0" prefHeight="30.0" prefWidth="200.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: linear-gradient(to bottom right, #2d658c, #2ca772); -fx-border-width: 0px 0px 2px 0px;" styleClass="input-field" stylesheets="@loginDes.css" />
+                  <Button fx:id="loginBtn" layoutX="94.0" layoutY="291.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="40.0" prefWidth="200.0" styleClass="login" stylesheets="@loginDes.css" text="Login" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="Login_signupBtn" layoutX="210.0" layoutY="390.0" mnemonicParsing="false" onAction="#MoveToSignUp" styleClass="sign-up" stylesheets="@loginDes.css" text="Sign up now" />
+                  <Label layoutX="97.0" layoutY="394.0" text="Don't have account?" />
+                  <FontAwesomeIcon glyphName="KEY" layoutX="64.0" layoutY="267.0" size="20" styleClass="left-form">
+                     <selectionFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="1.0" green="1.0" blue="1.0" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </selectionFill>
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1725490242242813" green="0.6549019813537598" blue="0.4470588266849518" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.612536519712438">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5490196347236633" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </FontAwesomeIcon>
+                  <FontAwesomeIcon glyphName="USER" layoutX="65.0" layoutY="224.0" size="20">
+                     <fill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop>
+                                 <color>
+                                    <Color red="0.1725490242242813" green="0.6549019813537598" blue="0.4470588266849518" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="0.6065620588911138">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5411764979362488" />
+                                 </color>
+                              </Stop>
+                              <Stop offset="1.0">
+                                 <color>
+                                    <Color red="0.1764705926179886" green="0.3960784375667572" blue="0.5490196347236633" />
+                                 </color>
+                              </Stop>
+                           </stops>
+                        </LinearGradient>
+                     </fill>
+                  </FontAwesomeIcon>
+                  <Button fx:id="SignupBtn21" layoutX="93.0" layoutY="343.0" mnemonicParsing="false" onAction="#LoginWithSpotify" prefHeight="40.0" prefWidth="200.0" styleClass="login" stylesheets="@loginDes.css" text="Login With Spotify" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@spotify-playlist.jpeg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Button fx:id="Close" mnemonicParsing="false" onAction="#Close" prefHeight="24.0" prefWidth="58.0" styleClass="close" stylesheets="@loginDes.css" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+               <graphic>
+                  <FontAwesomeIcon glyphName="CLOSE" size="1.2em" text="" />
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

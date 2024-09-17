@@ -1,0 +1,77 @@
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
+import mysql.connector
+import sys
+
+# Set up Spotify API credentials
+client_id = "64beda4e6b21451283236269ef10aaec"
+client_secret = "4f238894f89e43df8b9a5ca2cf977a30"
+redirect_uri = "http://localhost:3000"
+
+# Create a Spotify OAuth object
+scope = "user-read-recently-played user-top-read user-read-email"
+sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id=client_id,
+                                               client_secret=client_secret,
+                                               redirect_uri=redirect_uri,
+                                               scope=scope, show_dialog= True))
+
+user_profile = sp.current_user()
+user_email = user_profile['email']
+print(user_email)
+
+
+connection = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",
+    database="mr_sys"
+)
+
+cursor = connection.cursor()
+
+userID = str(sys.argv[1])
+
+sql = "SELECT userID FROM user_data WHERE spotify_email = '" + user_email + "'"
+cursor.execute(sql)
+results = cursor.fetchall()
+num = 1
+if not results:
+    sql = "UPDATE user_data SET spotify_email = '" + user_email +"' WHERE userID = " + userID
+    values = (user_email, user_email)
+    cursor.execute(sql)
+    connection.commit()
+
+    sql = "DELETE FROM user_recently_played WHERE user = " + userID
+    cursor.execute(sql)
+    connection.commit()
+
+    unique_tracks = set()
+    recently_played = sp.current_user_recently_played()
+    for track in recently_played["items"]:
+        track_info = track["track"]
+        track_id = track_info["id"]
+        if track_id in unique_tracks:
+            continue  # Skip duplicate track
+        # Add the track ID to the set
+        unique_tracks.add(track_id)
+        print(track_info['name'])
+        artists = ""
+        for artist in track_info['artists']:
+            artists = artists + artist['name'] + ", "
+        artists = artists[:-2]
+        print(artists)
+        year = track_info['album']['release_date'][:4]
+        cover_url = track_info['album']['images'][0]['url']
+        d = track_info['external_urls']
+        external_url = d['spotify']
+        sql = "INSERT INTO user_recently_played (name, artists, user,year,cover_url, external_url) VALUES (%s, %s ,%s, %s, %s, %s)"
+        values = (track_info['name'], artists, userID, str(year), cover_url, external_url)
+        cursor.execute(sql, values)
+        connection.commit()
+
+else:
+    num = 0
+
+with open("D:\\IdeaProjects\\MRS\\src\\main\\java\\com\\example\\mrs\\tmp\\tmpValue.txt", "w") as file:
+    file.write(str(num))
+file.close()

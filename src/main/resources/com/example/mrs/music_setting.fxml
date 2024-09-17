@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="538.0" prefWidth="810.0" stylesheets="@dashboardDes.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mrs.musicSettingController">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="white-bg" />
+   </styleClass>
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="9.0" prefHeight="50.0" prefWidth="786.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="358.0" layoutY="11.0" text="Settings">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="13.0" layoutY="75.0" prefHeight="450.0" prefWidth="786.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <ScrollPane layoutX="249.0" layoutY="149.0" prefHeight="450.4" prefWidth="786.4" vvalue="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <VBox prefHeight="514.0" prefWidth="770.0">
+                     <children>
+                        <Label text="Change Password">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="66.0" prefWidth="786.0" spacing="30.0">
+                           <children>
+                              <VBox prefHeight="66.0" prefWidth="306.0" spacing="10.0">
+                                 <children>
+                                    <StackPane prefHeight="15.0" prefWidth="312.0">
+                                       <children>
+                                          <PasswordField fx:id="pass_old" promptText="Enter your old password" styleClass="textfield" />
+                                          <TextField fx:id="text_old" promptText="Enter your old Password" styleClass="textfield" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane prefHeight="15.0" prefWidth="312.0">
+                                       <children>
+                                          <PasswordField fx:id="pass_new" promptText="Enter your new password" styleClass="textfield" />
+                                          <TextField fx:id="text_new" promptText="Enter your new Password" styleClass="textfield" visible="false" />
+                                       </children>
+                                    </StackPane>
+                                    <StackPane prefHeight="15.0" prefWidth="312.0">
+                                       <children>
+                                          <PasswordField fx:id="pass_new1" promptText="Re-enter your new Password" styleClass="textfield" />
+                                          <TextField fx:id="text_new1" promptText="Re-enter your new Password" styleClass="textfield" visible="false" />
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="95.0" prefWidth="127.0" spacing="10.0">
+                                 <children>
+                                    <ToggleButton fx:id="show_passBtn" mnemonicParsing="false" onAction="#toggleShowButton" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                                       <graphic>
+                                          <FontAwesomeIcon glyphName="EYE" text="" />
+                                       </graphic>
+                                    </ToggleButton>
+                                    <Button fx:id="change_passBtn" mnemonicParsing="false" onAction="#setChange_passBtn" prefHeight="25.0" prefWidth="128.0" styleClass="recBtn" text="Confirm Changes" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Label text="Feedbacks">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <TextField fx:id="subject" maxWidth="400.0" prefHeight="21.0" prefWidth="400.0" promptText="Subject">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <TextField fx:id="description" alignment="TOP_LEFT" maxWidth="400.0" prefHeight="119.0" prefWidth="400.0" promptText="Description">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </TextField>
+                              <Button fx:id="send_feedbacks" mnemonicParsing="false" onAction="#sendFeedbacks" prefHeight="25.0" prefWidth="128.0" styleClass="recBtn" text="Send Feedbacks">
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <Label text="Connect to your Spotify Account">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="connectSpotify" mnemonicParsing="false" onAction="#connectToSpotify" prefHeight="25.0" prefWidth="128.0" styleClass="recBtn" text="Connect now">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Label text="Sign out">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Button fx:id="signOut" mnemonicParsing="false" onAction="#signOut" prefHeight="25.0" prefWidth="128.0" styleClass="recBtn" text="Sign out now">
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <VBox fx:id="updateSuccess" layoutX="591.0" layoutY="506.0" prefHeight="14.0" prefWidth="212.0" style="-fx-background-color: #3cff49; -fx-background-radius: 6px 6px 6px 6px;" visible="false">
+         <children>
+            <Label text="Success">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

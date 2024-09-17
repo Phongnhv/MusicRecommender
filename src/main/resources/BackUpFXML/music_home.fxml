@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="538.0" prefWidth="810.0" stylesheets="@dashboardDes.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mrs.musicHomeController">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="white-bg" />
+   </styleClass>
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="9.0" prefHeight="50.0" prefWidth="786.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="347.0" layoutY="11.0" text="Dashboard">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="13.0" layoutY="75.0" prefHeight="450.0" prefWidth="476.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <ScrollPane layoutX="25.0" layoutY="59.0" prefHeight="450.4" prefWidth="476.0" vvalue="0.21" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                  <VBox prefHeight="594.0" prefWidth="474.0">
+                     <children>
+                        <Label text="Recently Played">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="15.0" right="10.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox fx:id="recentPlay" prefHeight="150.0" prefWidth="466.0" spacing="10.0">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin></HBox>
+                        <Label text="Recently Played in Spotify">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" left="15.0" top="10.0" />
+                           </VBox.margin>
+                        </Label>
+                        <HBox fx:id="recentPlay2" prefHeight="150.0" prefWidth="466.0" spacing="10.0">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox prefHeight="10.0" prefWidth="474.0" spacing="130.0">
+                           <children>
+                              <Label text="Base on your recent listening">
+                                 <font>
+                                    <Font name="Arial Rounded MT Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Button mnemonicParsing="false" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" text="Show more...">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox fx:id="recommendList" prefHeight="150.0" prefWidth="466.0" spacing="10.0">
+                           <VBox.margin>
+                              <Insets left="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="505.0" layoutY="76.0" prefHeight="450.0" prefWidth="290.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="19.0" layoutY="290.0" text="Track">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="track_name" editable="false" layoutX="19.0" layoutY="310.0" prefHeight="26.0" prefWidth="251.0" styleClass="textfield" />
+            <AnchorPane layoutX="73.0" layoutY="95.0" prefHeight="150.0" prefWidth="144.0">
+               <children>
+                  <ImageView fx:id="track_img" fitHeight="150.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true" styleClass="white-bg" />
+               </children>
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <TextField fx:id="track_artist" editable="false" layoutX="19.0" layoutY="357.0" prefHeight="26.0" prefWidth="251.0" styleClass="textfield" />
+            <Label layoutX="19.0" layoutY="337.0" text="Artist(s)">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="track_year" editable="false" layoutX="19.0" layoutY="404.0" prefHeight="26.0" prefWidth="251.0" styleClass="textfield" />
+            <Label layoutX="20.0" layoutY="384.0" text="Year">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="playBtn" layoutX="94.0" layoutY="258.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="35.0" styleClass="recBtn">
+               <graphic>
+                  <FontAwesomeIcon glyphName="PLAY" size="1.5em" />
+               </graphic>
+            </Button>
+            <Button fx:id="url_btn" layoutX="165.0" layoutY="258.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" styleClass="recBtn">
+               <graphic>
+                  <FontAwesomeIcon glyphName="COMPASS" size="1.5em" />
+               </graphic>
+            </Button>
+            <Label layoutX="64.0" layoutY="60.0" text="Tracks Information">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="Existed_track_search" layoutX="11.0" layoutY="14.0" prefHeight="26.0" prefWidth="210.0" promptText="Search Your Track" styleClass="search" stylesheets="@dashboardDes.css">
+               <font>
+                  <Font name="Tahoma" size="14.0" />
+               </font>
+            </TextField>
+            <FontAwesomeIcon glyphName="SEARCH" layoutX="19.0" layoutY="33.0" size="1.5em" />
+            <Button fx:id="add_btn" layoutX="226.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchSongData" prefHeight="25.0" prefWidth="54.0" styleClass="recBtn" text="Search" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

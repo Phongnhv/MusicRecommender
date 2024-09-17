@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="538.0" prefWidth="810.0" stylesheets="@dashboardDes.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mrs.musicRecommenderController">
+   <styleClass>
+      <String fx:value="shadow" />
+      <String fx:value="white-bg" />
+   </styleClass>
+   <children>
+      <AnchorPane layoutX="12.0" layoutY="9.0" prefHeight="50.0" prefWidth="786.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <TextField fx:id="spotify_track_search" layoutX="15.0" layoutY="14.0" prefHeight="26.0" prefWidth="538.0" promptText="Search Your Track" styleClass="search" stylesheets="@dashboardDes.css">
+               <font>
+                  <Font name="Tahoma" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="Existed_track_search" layoutX="15.0" layoutY="14.0" prefHeight="26.0" prefWidth="538.0" promptText="Search Your Track" styleClass="search" stylesheets="@dashboardDes.css">
+               <font>
+                  <Font name="Tahoma" size="14.0" />
+               </font>
+            </TextField>
+            <FontAwesomeIcon glyphName="SEARCH" layoutX="23.0" layoutY="33.0" size="1.5em" />
+            <Button fx:id="add_btn" layoutX="610.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchSongData" prefHeight="25.0" prefWidth="54.0" styleClass="recBtn" text="Search" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="13.0" layoutY="75.0" prefHeight="450.0" prefWidth="476.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <TableView fx:id="list_table" layoutX="22.0" layoutY="48.0" onMouseClicked="#dataSelect" prefHeight="388.0" prefWidth="431.0" stylesheets="@dashboardDes.css">
+               <columns>
+                  <TableColumn fx:id="Expense_col_no1" minWidth="0.0" prefWidth="0.0" />
+                  <TableColumn fx:id="list_col_name" prefWidth="165.60003089904785" text="Name" />
+                  <TableColumn fx:id="list_col_artist" prefWidth="161.60003662109375" text="Artist(s)" />
+                  <TableColumn fx:id="list_col_year" prefWidth="100.0" text="Year" />
+               </columns>
+            </TableView>
+            <Label layoutX="22.0" layoutY="14.0" text="Recommended Tracks">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="refreshBtn" layoutX="415.0" layoutY="15.0" mnemonicParsing="false" onAction="#recommendSong" prefHeight="25.0" prefWidth="25.0" style="-fx-background-radius: 50%; -fx-border-radius: 50%;" styleClass="recBtn">
+               <graphic>
+                  <FontAwesomeIcon glyphName="REFRESH" />
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="505.0" layoutY="76.0" prefHeight="450.0" prefWidth="290.0" stylesheets="@dashboardDes.css">
+         <styleClass>
+            <String fx:value="shadow" />
+            <String fx:value="white-bg" />
+         </styleClass>
+         <children>
+            <Label layoutX="19.0" layoutY="240.0" text="Track">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="track_name" editable="false" layoutX="19.0" layoutY="260.0" prefHeight="26.0" prefWidth="251.0" styleClass="textfield" />
+            <AnchorPane layoutX="73.0" layoutY="38.0" prefHeight="150.0" prefWidth="144.0">
+               <children>
+                  <ImageView fx:id="track_img" fitHeight="150.0" fitWidth="144.0" pickOnBounds="true" preserveRatio="true" styleClass="white-bg" />
+               </children>
+               <styleClass>
+                  <String fx:value="white-bg" />
+                  <String fx:value="shadow" />
+               </styleClass>
+            </AnchorPane>
+            <TextField fx:id="track_artist" editable="false" layoutX="19.0" layoutY="307.0" prefHeight="26.0" prefWidth="251.0" styleClass="textfield" />
+            <Label layoutX="19.0" layoutY="287.0" text="Artist(s)">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="track_url" editable="false" layoutX="19.0" layoutY="402.0" prefHeight="26.0" prefWidth="251.0" styleClass="textfield" />
+            <Label layoutX="17.0" layoutY="381.0" text="Url(s)">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="track_year" editable="false" layoutX="19.0" layoutY="354.0" prefHeight="26.0" prefWidth="251.0" styleClass="textfield" />
+            <Label layoutX="20.0" layoutY="334.0" text="Year">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="playBtn" layoutX="94.0" layoutY="209.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="35.0" styleClass="recBtn">
+               <graphic>
+                  <FontAwesomeIcon glyphName="PLAY" size="1.5em" />
+               </graphic>
+            </Button>
+            <Button fx:id="url_btn" layoutX="165.0" layoutY="209.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" styleClass="recBtn">
+               <graphic>
+                  <FontAwesomeIcon glyphName="COMPASS" size="1.5em" />
+               </graphic>
+            </Button>
+            <Label layoutX="64.0" layoutY="10.0" text="Tracks Information">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
