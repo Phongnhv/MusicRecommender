@@ -13,8 +13,8 @@ import mysql.connector
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 
-client_id = '64beda4e6b21451283236269ef10aaec'
-client_secret = '4f238894f89e43df8b9a5ca2cf977a30'
+client_id = 'CLIENT_ID'
+client_secret = 'CLIENT_SECRET'
 auth_manager = SpotifyClientCredentials(client_id=client_id, client_secret=client_secret)
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
