@@ -3,8 +3,8 @@ from spotipy.oauth2 import SpotifyOAuth
 import mysql.connector
 
 # Set up Spotify API credentials
-client_id = "64beda4e6b21451283236269ef10aaec"
-client_secret = "4f238894f89e43df8b9a5ca2cf977a30"
+client_id = 'CLIENT_ID'
+client_secret = 'CLIENT_SECRET'
 redirect_uri = "http://localhost:3000"
 
 # Create a Spotify OAuth object
